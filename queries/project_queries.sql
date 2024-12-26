@@ -46,7 +46,7 @@ limit 1
  
 -- Joins 
 -- List the names of employees and the names of their corresponding supervisors. 
-elect e1.employeename as name_emp,
+select e1.employeename as name_emp,
 	      e2.reportsTO as supervisor
  from employee e1 
  join employees e2 ON e1.supervisorID = e2.employeeID
