@@ -53,7 +53,6 @@ The project is organized into the following directories and files:
 |-- northwind_database.sql    # SQL script to set up the database
 |-- queries
 |   |-- project_queries.sql   # SQL queries
-|-- insights.md               # Documented business insights
 ```
 
 ## SQL Topics Covered
