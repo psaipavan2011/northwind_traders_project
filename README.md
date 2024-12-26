@@ -52,11 +52,8 @@ The project is organized into the following directories and files:
 |-- README.md                 # Project overview
 |-- northwind_database.sql    # SQL script to set up the database
 |-- queries
-|   |-- basic_queries.sql     # Basic SQL queries
-|   |-- intermediate_queries.sql # Joins, subqueries, etc.
-|   |-- advanced_queries.sql  # Window functions, CTEs, etc.
+|   |-- project_queries.sql   # SQL queries
 |-- insights.md               # Documented business insights
-|-- screenshots               # Query results and visualizations
 ```
 
 ## SQL Topics Covered
