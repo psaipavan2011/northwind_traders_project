@@ -99,8 +99,7 @@ select count(order_details.quantity),products.productID,categories.categoryname 
  
  
  
- 
-4. Find the monthly revenue for the past year. 
+-- Find the monthly revenue for the past year. 
 WITH RECURSIVE numbers AS ( 
 	SELECT 1 AS num -- Starting number 
 	UNION ALL 
@@ -113,13 +112,9 @@ FROM numbers
 inner join orders on month(orderdate)  = numbers.num 
 inner join order_details on order_details.orderID = orders.orderid 
 group by num 
-5. Calculate the average shipping time for each shipper. 
  
-
-
-CTEs (Common Table Expressions) 
-Window Functions 
-1. Rank products based on the total revenue generated. 
+-- Window Functions 
+-- Rank products based on the total revenue generated. 
 select products.productname,
 SUM(order_details.quantity * order_details.unitprice) AS total_revenue,
 RANK() OVER (ORDER BY SUM(order_details.quantity * order_details.unitprice) DESC) AS revenue_rank
@@ -131,8 +126,8 @@ GROUP BY
     products.productname
 ORDER BY 
     revenue_rank;
-     
-   2. Find the top 5 employees by the number of orders handled, using RANK(). 
+  
+-- Find the top 5 employees by the number of orders handled, using RANK(). 
     SELECT 
     orders.orderID,
     employees.employeeID,
@@ -148,7 +143,7 @@ GROUP BY
 ORDER BY 
     employees.employeename, rank_handled;
     
-3 Compute the running total of the number of orders by date.
+-- Compute the running total of the number of orders by date.
 SELECT 
     Date(orderdate),
     COUNT(orders.OrderID) AS Total_Orders,
@@ -158,7 +153,7 @@ GROUP BY  Date(orderdate)
 ORDER BY  Date(orderdate);
 
 
-4. Use a window function to find the average unit price of products within each category
+-- Use a window function to find the average unit price of products within each category
 SELECT 
     products.productname,
     categories.categoryname,
