@@ -1,6 +1,5 @@
--- 1. Retrieve the names of all customers who have placed more than 5 orders. 
- 
-select orders.customerID,customers.companyName,count(orderID) as count_of_orders from orders 
+--  Retrieve the names of all customers who have placed more than 5 orders. 
+ select orders.customerID,customers.companyName,count(orderID) as count_of_orders from orders 
 join customers on customers.customerID = orders.customerID 
 group by customers.companyName,orders.customerID 
 having count_of_orders > 5; 
@@ -21,9 +20,6 @@ order by totalprice desc
 limit 5 
  
  
- 
- 
- 
 -- Calculate the percentage contribution of each product to the total revenue. 
 SELECT  
 	products.productname, 
@@ -41,8 +37,6 @@ join order_details on order_details.orderID = orders.orderID
 group by customers.companyname 
 order by total desc 
 limit 1 
- 
- 
  
 -- Joins 
 -- List the names of employees and the names of their corresponding supervisors. 
